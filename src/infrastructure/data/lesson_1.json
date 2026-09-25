@@ -1,0 +1,32 @@
+{
+  "id": "intro_01",
+  "title": "Kryzys w Koszyku",
+  "description": "Wprowadzenie do debugowania Node.js i radzenia sobie z nieskończonymi pętlami.",
+  "content": {
+    "businessBrief": "Otrzymaliśmy zgłoszenie z produkcji o statusie KRYTYCZNY. Gdy użytkownik próbuje przeliczyć rabat w koszyku, cały serwer Node.js przestaje odpowiadać na żądania, a obciążenie procesora skacze do 100%. Zlokalizuj problem w kodzie przeliczającym i wdróż poprawkę (Hotfix).",
+    "guidedSteps": [
+      "1. Przeanalizuj funkcję 'calculateDiscount'.",
+      "2. Znajdź pętlę 'while', która iteruje po produktach.",
+      "3. Zauważ, że zmienna indeksująca 'i' nigdy nie zwiększa swojej wartości, co powoduje nieskończoną pętlę.",
+      "4. Dodaj 'i++' na samym końcu bloku pętli 'while'."
+    ]
+  },
+  "workspace": {
+    "initialCode": "function calculateDiscount(cartItems) {\n  let total = 0;\n  let i = 0;\n  \n  // Przeliczanie rabatów dla każdego przedmiotu\n  while (i < cartItems.length) {\n    total += cartItems[i].price * 0.9; // 10% rabatu\n    \n    // TODO: Coś tu jest nie tak...\n  }\n  \n  return total;\n}\n\n// Kod testowy wywoływany automatycznie\nconst items = [{price: 100}, {price: 50}];\nconsole.log('Suma po rabacie:', calculateDiscount(items));",
+    "validationLogic": "if (result.includes('Suma po rabacie: 135')) return true; else return false;"
+  },
+  "hints": [
+    {
+      "level": 1,
+      "content": "Zwróć uwagę na warunek zakończenia pętli while: (i < cartItems.length). Kiedy ten warunek stanie się fałszywy?"
+    },
+    {
+      "level": 2,
+      "content": "Wewnątrz pętli while wartość cartItems.length się nie zmienia. Wartość 'i' również się nie zmienia. To klasyczny przypadek nieskończonej pętli (Infinite Loop)."
+    },
+    {
+      "level": 3,
+      "content": "Musisz zainkrementować licznik. Dodaj i++; na samym końcu ciała pętli, w linii 9."
+    }
+  ]
+}

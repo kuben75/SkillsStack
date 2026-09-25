@@ -1,0 +1,15 @@
+{
+  "translation": {
+    "app_title": "SkillStack",
+    "lesson_1_title": "Lesson 1: Getting started with Node.js",
+    "your_task": "Your task:",
+    "task_description": "Write any JavaScript code in the editor on the right, then run it to test our native runtime environment (Rust + Node.js).",
+    "run_code": "▶ Run Code",
+    "executing": "Executing code...",
+    "terminal_output": "Output (Terminal)",
+    "waiting_for_run": "Waiting for program execution...",
+    "system_error": "System worker error:",
+    "mode_guided": "Guided Mode",
+    "mode_engineering": "Engineering Mode"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "translation": {
+    "app_title": "SkillStack",
+    "lesson_1_title": "Lekcja 1: Pierwsze kroki w Node.js",
+    "your_task": "Twoje zadanie:",
+    "task_description": "Napisz dowolny kod w języku JavaScript w edytorze po prawej stronie, a następnie uruchom go, aby przetestować nasze natywne środowisko wykonawcze (Rust + Node.js).",
+    "run_code": "▶ Uruchom Kod",
+    "executing": "Wykonywanie kodu...",
+    "terminal_output": "Wyjście (Terminal)",
+    "waiting_for_run": "Czekam na uruchomienie programu...",
+    "system_error": "Błąd systemu roboczego:",
+    "mode_guided": "Tryb Prowadzony",
+    "mode_engineering": "Tryb Inżynierski"
+  }
+}
