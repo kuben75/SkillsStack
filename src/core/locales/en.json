@@ -10,6 +10,17 @@
     "waiting_for_run": "Waiting for program execution...",
     "system_error": "System worker error:",
     "mode_guided": "Guided Mode",
-    "mode_engineering": "Engineering Mode"
+    "mode_engineering": "Engineering Mode",
+    "hints_title": "Hint Ladder",
+    "reveal_hint": "Reveal hint",
+    "all_revealed": "These are all the hints for this task.",
+    "no_hints": "No hints available for this task.",
+    "hint_locked": "[Hint Locked]",
+    "level": "Level",
+    "tab_lesson": "Task Content",
+    "tab_hints": "Hints ({{count}})",
+    "tab_editor": "Code Editor",
+    "tab_preview": "Preview",
+    "preview_empty": "Preview will appear after writing code..."
   }
 }

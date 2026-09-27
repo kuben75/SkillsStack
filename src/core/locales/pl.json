@@ -10,6 +10,18 @@
     "waiting_for_run": "Czekam na uruchomienie programu...",
     "system_error": "Błąd systemu roboczego:",
     "mode_guided": "Tryb Prowadzony",
-    "mode_engineering": "Tryb Inżynierski"
+    "mode_engineering": "Tryb Inżynierski",
+    "hints_title": "Drabinka Podpowiedzi",
+    "reveal_hint": "Odsłoń podpowiedź",
+    "all_revealed": "To już wszystkie podpowiedzi do tego zadania.",
+    "no_hints": "Brak podpowiedzi do tego zadania.",
+    "hint_locked": "[Podpowiedź zablokowana]",
+    "level": "Poziom",
+    "tab_lesson": "Treść Zadania",
+    "tab_hints": "Podpowiedzi ({{count}})",
+    "tab_ai": "Tutor AI",
+    "tab_editor": "Edytor Kodu",
+    "tab_preview": "Podgląd",
+    "preview_empty": "Podgląd uruchomi się po napisaniu kodu..."
   }
 }

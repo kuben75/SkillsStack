@@ -1,32 +1,59 @@
 {
-  "id": "intro_01",
-  "title": "Kryzys w Koszyku",
-  "description": "Wprowadzenie do debugowania Node.js i radzenia sobie z nieskończonymi pętlami.",
+  "id": "intro_02",
+  "type": "ui",
+  "title": {
+    "pl": "Wprowadzenie do UI",
+    "en": "Introduction to UI"
+  },
+  "description": {
+    "pl": "Wprowadzenie do podstawowych elementów interfejsu użytkownika w aplikacjach webowych.",
+    "en": "Introduction to basic user interface elements in web applications."
+  },
   "content": {
-    "businessBrief": "Otrzymaliśmy zgłoszenie z produkcji o statusie KRYTYCZNY. Gdy użytkownik próbuje przeliczyć rabat w koszyku, cały serwer Node.js przestaje odpowiadać na żądania, a obciążenie procesora skacze do 100%. Zlokalizuj problem w kodzie przeliczającym i wdróż poprawkę (Hotfix).",
-    "guidedSteps": [
-      "1. Przeanalizuj funkcję 'calculateDiscount'.",
-      "2. Znajdź pętlę 'while', która iteruje po produktach.",
-      "3. Zauważ, że zmienna indeksująca 'i' nigdy nie zwiększa swojej wartości, co powoduje nieskończoną pętlę.",
-      "4. Dodaj 'i++' na samym końcu bloku pętli 'while'."
-    ]
+    "businessBrief": {
+      "pl": "Twoim zadaniem jest stworzenie prostego interfejsu użytkownika z przyciskiem i polem tekstowym. Po kliknięciu przycisku, tekst z pola tekstowego powinien być wyświetlany poniżej.",
+      "en": "Your task is to create a simple user interface with a button and a text field. When the button is clicked, the text from the text field should be displayed below."
+    },
+    "guidedSteps": {
+      "pl": [
+        "1. Utwórz element <input> typu 'text' z id 'userInput'.",
+        "2. Utwórz element <button> z id 'displayButton' i tekstem 'Wyświetl'.",
+        "3. Utwórz element <div> z id 'output' do wyświetlania tekstu.",
+        "4. Dodaj nasłuchiwanie zdarzenia 'click' na przycisku, które pobierze wartość z pola tekstowego i ustawi ją jako zawartość elementu <div>."
+      ],
+      "en": [
+        "1. Create an <input> element of type 'text' with id 'userInput'.",
+        "2. Create a <button> element with id 'displayButton' and text 'Display'.",
+        "3. Create a <div> element with id 'output' to display the text.",
+        "4. Add a 'click' event listener to the button that retrieves the value from the text field and sets it as the content of the <div>."
+      ]
+    }
   },
   "workspace": {
-    "initialCode": "function calculateDiscount(cartItems) {\n  let total = 0;\n  let i = 0;\n  \n  // Przeliczanie rabatów dla każdego przedmiotu\n  while (i < cartItems.length) {\n    total += cartItems[i].price * 0.9; // 10% rabatu\n    \n    // TODO: Coś tu jest nie tak...\n  }\n  \n  return total;\n}\n\n// Kod testowy wywoływany automatycznie\nconst items = [{price: 100}, {price: 50}];\nconsole.log('Suma po rabacie:', calculateDiscount(items));",
-    "validationLogic": "if (result.includes('Suma po rabacie: 135')) return true; else return false;"
+    "initialCode": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>UI Task</title>\n</head>\n<body>\n    <!-- TODO: Add your input, button, and output elements here -->\n\n    <script>\n        // TODO: Add your JavaScript code here\n    </script>\n</body>\n</html>",
+    "validationLogic": "const input = document.getElementById('userInput');\nconst button = document.getElementById('displayButton');\nconst output = document.getElementById('output');\n\nif (input && button && output) {\n    button.click();\n    if (output.textContent === input.value) {\n        return true;\n    }\n}\nreturn false;"
   },
   "hints": [
     {
       "level": 1,
-      "content": "Zwróć uwagę na warunek zakończenia pętli while: (i < cartItems.length). Kiedy ten warunek stanie się fałszywy?"
+      "content": {
+        "pl": "Upewnij się, że elementy mają odpowiednie id: 'userInput', 'displayButton', i 'output'.",
+        "en": "Make sure the elements have the correct ids: 'userInput', 'displayButton', and 'output'."
+      }
     },
     {
       "level": 2,
-      "content": "Wewnątrz pętli while wartość cartItems.length się nie zmienia. Wartość 'i' również się nie zmienia. To klasyczny przypadek nieskończonej pętli (Infinite Loop)."
+      "content": {
+        "pl": "Dodaj nasłuchiwanie zdarzenia 'click' na przycisku, aby pobrać wartość z pola tekstowego.",
+        "en": "Add a 'click' event listener to the button to retrieve the value from the text field."
+      }
     },
     {
       "level": 3,
-      "content": "Musisz zainkrementować licznik. Dodaj i++; na samym końcu ciała pętli, w linii 9."
+      "content": {
+        "pl": "Ustaw zawartość elementu <div> o id 'output' na wartość pobraną z pola tekstowego.",
+        "en": "Set the content of the <div> element with id 'output' to the value retrieved from the text field."
+      }
     }
   ]
 }
